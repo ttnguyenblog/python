@@ -14,7 +14,7 @@ WORKDIR /app
 COPY . /app
 
 # Install Python dependencies from requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --break-system-packages --no-cache-dir -r requirements.txt
 
 # Specify the command to run when the container starts
 CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
